@@ -4,3 +4,5 @@
 $ docker compose up
 $ make
 ```
+
+To generate new cert and key, just run the `./create-cert.sh`
