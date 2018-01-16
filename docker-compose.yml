@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+  envoy:
+    build:
+      context: envoy
+    ports:
+      - "10000:10000"
+      - "9901:9901"
+
+  server:
+    build:
+      context: server
+    depends_on:
+      - envoy
