@@ -39,7 +39,7 @@ const (
 func main() {
 	// Set up a connection to the server.
 	_, filename, _, _ := runtime.Caller(0)
-	creds, _ := credentials.NewClientTLSFromFile(filepath.Join(path.Dir(filename), "..", "envoy", "pem", "crt"), "localhost")
+	creds, _ := credentials.NewClientTLSFromFile(filepath.Join(path.Dir(filename), "..", "envoy", "pem", "crt"), "hello.com")
 	conn, err := grpc.Dial(address, grpc.WithTransportCredentials(creds))
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
