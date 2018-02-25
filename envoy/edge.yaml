@@ -26,7 +26,8 @@ static_resources:
           - name: envoy.router
       tls_context:
         common_tls_context:
-          tls_certificates:
+            alpn_protocols: "h2"
+            tls_certificates:
             - certificate_chain: { filename: "/etc/crt" }
               private_key: { filename: "/etc/key" }
   clusters:
